@@ -1,0 +1,349 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  overflow: hidden;
+}
+
+
+/*********** Navbar code starts ********/
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #333;
+  padding: 10px;
+  z-index: 1;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 40px;
+}
+
+.logo {
+  color: #ec7804;
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+
+.nav-links {
+  list-style-type: none;
+  display: flex;
+}
+
+.nav-links li {
+  margin-left: 10px;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px;
+  transition: 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #e38629e6;
+  cursor: pointer;
+}
+
+/*********** Navbar code end ********/
+
+
+/******** Sidebar or leftside code starts ******/
+
+.container {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.sidebar {
+  position: fixed;
+  top: 62px;
+  left: 0;
+  width: 200px;
+  background-color: #444;
+  color: #fff;
+  padding: 20px;
+  padding-top: 5px;
+  z-index: 1;
+  overflow-y: auto;
+  height: 100vh;
+}
+
+.sidebar-link.active {
+  color: #ec7804;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar li {
+  margin-bottom: 10px;
+  width: 100%;
+  padding: 6px 17px;
+  display: flex;
+  align-items: center;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.sidebar a i {
+  font-size: 18px;
+  margin-right: 10px;
+}
+
+.sidebar a .con {
+  font-size: 15px;
+}
+
+
+/******** Sidebar or leftside code end ******/
+
+
+/******** content section or rightside code starts ******/
+.content {
+  flex-grow: 1;
+  background-color: #fff;
+  padding: 20px;
+  padding-top: 80px;
+  margin-left: 200px;
+}
+
+.section {
+  display: none;
+}
+
+.section:target {
+  display: block;
+}
+
+/******** Sidebar or leftside code end ******/
+
+
+/************* home page animation code starts *********/
+@keyframes rainbow-fade {
+    0% {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0);
+    }
+    100% {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+    }
+  }
+  
+  .rainbow-fade {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: rainbow-fade 1s ease-in-out;
+  }
+  
+  .rainbow-fade::before {
+    content: "";
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: linear-gradient(
+      to right,
+      red,
+      orange,
+      yellow,
+      green,
+      blue,
+      indigo,
+      violet
+    );
+    animation: rainbow-fade 3s infinite linear;
+  }
+  
+  @keyframes scale-rotate {
+    0% {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0) rotate(0deg);
+    }
+    100% {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1) rotate(360deg);
+    }
+  }
+  
+  .scale-rotate {
+    position: absolute;
+    top: calc(55% - 10px);
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: scale-rotate 2.8s ease-in-out;
+  }
+  
+/************* home page animation code end *********/
+
+
+/********************* contact form css starts ***********/
+#contact {
+  display: none;
+}
+
+#contact h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+#contact form {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+#contact form div {
+  margin-bottom: 20px;
+}
+
+#contact form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+#contact form input,
+#contact form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#contact form textarea {
+  height: 120px;
+}
+
+#contact form button {
+  padding: 10px 20px;
+  background-color: #555;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Responsive Styles */
+
+@media screen and (max-width: 768px) {
+  #contact form {
+    max-width: 100%;
+    padding: 0 20px;
+  }
+}
+
+/********************* contact form css end ***********/
+
+
+/********************* guide page css starts ***********/
+#guide {
+  display: none;
+}
+
+#guide h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+#guide .guide-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+#guide h2 {
+  font-size: 20px;
+  margin-top: 30px;
+}
+
+#guide p {
+  margin-bottom: 15px;
+}
+
+/* Responsive Styles */
+
+@media screen and (max-width: 768px) {
+  #guide .guide-content {
+    padding: 0 20px;
+  }
+}
+
+/********************* guide page css end ***********/
+
+
+/***************** Information Page CSS starts ****************/
+
+#information {
+  /* text-align: center; */
+  margin-top: 50px;
+}
+
+#information h1 {
+  font-size: 36px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+#information h4 {
+  margin-bottom: 10px;
+}
+
+#information p {
+  font-size: 15px;
+  color: #666;
+  line-height: 1.5;
+}
+
+/* Responsive Styles */
+
+@media screen and (max-width: 768px) {
+  #information h1 {
+    font-size: 28px;
+  }
+
+  #information p {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #information {
+    margin-top: 30px;
+  }
+
+  #information h1 {
+    font-size: 24px;
+  }
+
+  #information p {
+    font-size: 14px;
+  }
+}
+
+
+/***************** Information Page CSS end ****************/
